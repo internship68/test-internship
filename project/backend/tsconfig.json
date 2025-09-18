@@ -10,19 +10,10 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": false,
     "declaration": true,
     "outDir": "dist",
     "sourceMap": true
   },
-  "include": [
-    "app.ts",
-    "server.ts",
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "**/*.test.ts"
-  ]
+  "include": ["app.ts", "server.ts", "src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts"]
 }

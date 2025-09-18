@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon --watch ./ --ext ts --exec ts-node server.ts",
     "build": "tsc",
-    "start": "node dist/server.ts",
+    "start": "node dist/server.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "postinstall": "npm run build"
