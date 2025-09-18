@@ -14,16 +14,18 @@ if (process.env.NODE_ENV === 'development') {
 // ✅ Allowed origins (dev + prod)
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://task-manager-thinnakorn.netlify.app/',
+  'https://task-manager-thinnakorn.netlify.app',
 ];
 
-// ✅ CORS middleware
+// ✅ CORS middleware with logging
 app.use(
   cors({
     origin: (origin, callback) => {
+      console.log('CORS check, origin:', origin); 
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
+        console.warn('Blocked by CORS:', origin);
         callback(new Error('Not allowed by CORS'));
       }
     },
