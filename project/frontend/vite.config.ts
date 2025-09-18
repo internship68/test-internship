@@ -6,7 +6,7 @@ export default defineConfig({
   root: '.', // ใช้โฟลเดอร์ปัจจุบัน (frontend) เป็น root
   plugins: [react()],
   build: {
-    outDir: '../dist', // build ออกไปที่ project/dist
+    outDir: 'dist', // ✅ build ออกไปที่ frontend/dist
     emptyOutDir: true,
   },
   resolve: {
