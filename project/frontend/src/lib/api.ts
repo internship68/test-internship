@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { z } from 'zod';
 const API_BASE_URL =
-  import.meta.env.VITE_API_URL || 'https://task-manager-backend.onrender.com/api';
+  import.meta.env.VITE_API_URL || 'https://test-internship-bxno.onrender.com/api';
 
 // Validation schemas
 export const createTaskSchema = z.object({
