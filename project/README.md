@@ -2,6 +2,12 @@
 
 A modern, production-ready task management application built with React (TypeScript) for the frontend and Node.js/Express (TypeScript) for the backend, using MongoDB Atlas as the database.
 
+📱 Live URLs
+
+Frontend: https://task-manager-thinnakorn.netlify.app
+
+Backend: https://test-internship-bxno.onrender.com/api
+
 ## 🚀 Features
 
 ### Frontend
