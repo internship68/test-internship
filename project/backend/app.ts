@@ -1,4 +1,5 @@
-import express from 'express';
+// app.ts
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import taskRoutes from './src/routes/taskRoutes';
@@ -22,12 +23,12 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
 // Root
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response) => {
   res.send('🚀 API server is running');
 });
 
 // Health check
-app.get('/api/health', (req, res) => {
+app.get('/api/health', (req: Request, res: Response) => {
   res.json({
     success: true,
     message: 'Server is running',

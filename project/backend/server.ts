@@ -5,7 +5,7 @@ import { connectDatabase } from "./src/config/database";
 
 dotenv.config();
 
-const PORT = process.env.PORT ? Number(process.env.PORT) : 3001;
+const PORT: number = process.env.PORT ? Number(process.env.PORT) : 3001;
 
 (async () => {
   try {
@@ -23,4 +23,4 @@ const PORT = process.env.PORT ? Number(process.env.PORT) : 3001;
   }
 })();
 
-export default app; 
+export default app;
