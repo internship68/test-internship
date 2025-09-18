@@ -3,11 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-// server.ts
 const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config(); // ต้องอยู่บนสุดเสมอ
 const app_1 = __importDefault(require("./app"));
 const database_1 = require("./src/config/database");
-dotenv_1.default.config();
 const PORT = process.env.PORT ? Number(process.env.PORT) : 3001;
 (async () => {
     try {
@@ -24,5 +23,4 @@ const PORT = process.env.PORT ? Number(process.env.PORT) : 3001;
         process.exit(1);
     }
 })();
-exports.default = app_1.default;
 //# sourceMappingURL=server.js.map

@@ -1,14 +1,14 @@
-// server.ts
 import dotenv from "dotenv";
+dotenv.config(); // ต้องอยู่บนสุดเสมอ
+
 import app from "./app";
 import { connectDatabase } from "./src/config/database";
-
-dotenv.config();
 
 const PORT: number = process.env.PORT ? Number(process.env.PORT) : 3001;
 
 (async () => {
   try {
+
     // เชื่อมต่อ MongoDB
     await connectDatabase();
 
@@ -22,5 +22,3 @@ const PORT: number = process.env.PORT ? Number(process.env.PORT) : 3001;
     process.exit(1);
   }
 })();
-
-export default app;
