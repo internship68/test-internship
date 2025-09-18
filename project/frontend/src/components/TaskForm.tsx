@@ -21,7 +21,6 @@ export const TaskForm: React.FC = () => {
   return (
     <form onSubmit={handleSubmit} className="mb-8">
       <div className="flex gap-4">
-        {/* Input field */}
         <div className="flex-1">
           <input
             type="text"

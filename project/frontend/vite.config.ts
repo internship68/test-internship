@@ -3,15 +3,15 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
-  root: '.', // ใช้โฟลเดอร์ปัจจุบัน (frontend) เป็น root
+  root: '.', 
   plugins: [react()],
   build: {
-    outDir: 'dist', // ✅ build ออกไปที่ frontend/dist
+    outDir: 'dist',
     emptyOutDir: true,
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'), // src อยู่ใน frontend/
+      '@': path.resolve(__dirname, './src'),
     },
   },
   server: {

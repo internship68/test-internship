@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { TaskItem } from '../components/TaskItem';
 import type { Task } from '../types/task';
 
-// Mock the hooks
+
 jest.mock('../hooks/useTasks', () => ({
   useUpdateTask: () => ({
     mutateAsync: jest.fn().mockResolvedValue({}),
@@ -64,7 +64,7 @@ describe('TaskItem', () => {
   });
 
   it('shows delete confirmation dialog', () => {
-    // Mock window.confirm
+    
     const confirmSpy = jest.spyOn(window, 'confirm').mockReturnValue(true);
     
     render(<TaskItem task={mockTask} />, { wrapper: createWrapper() });

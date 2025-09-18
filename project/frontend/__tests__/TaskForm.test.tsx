@@ -3,7 +3,6 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { TaskForm } from '../components/TaskForm';
 
-// Mock the useTasks hook
 jest.mock('../hooks/useTasks', () => ({
   useCreateTask: () => ({
     mutateAsync: jest.fn().mockResolvedValue({}),

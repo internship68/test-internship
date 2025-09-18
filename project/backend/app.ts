@@ -1,4 +1,3 @@
-// app.ts
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
@@ -12,11 +11,25 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
-// CORS
+// ✅ Allowed origins (dev + prod)
 const allowedOrigins = [
-  process.env.CLIENT_URL || 'http://localhost:5173',
+  'http://localhost:5173',
+  'https://task-manager-thinnakorn.netlify.app/',
 ];
-app.use(cors({ origin: allowedOrigins, credentials: true }));
+
+// ✅ CORS middleware
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true,
+  })
+);
 
 // Middleware
 app.use(express.json({ limit: '10mb' }));

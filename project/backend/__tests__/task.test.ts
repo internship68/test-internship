@@ -32,7 +32,6 @@ describe('Task API', () => {
     it('should return all tasks', async () => {
       // สร้าง Task 1 ก่อน
       await Task.create({ title: 'Task 1', completed: false });
-      // รอเพื่อให้ createdAt ต่างกัน
       await new Promise((resolve) => setTimeout(resolve, 10));
       // สร้าง Task 2 หลัง
       await Task.create({ title: 'Task 2', completed: true });
@@ -40,7 +39,7 @@ describe('Task API', () => {
       const response = await request(app).get('/api/tasks').expect(200);
       expect(response.body.success).toBe(true);
       expect(response.body.data).toHaveLength(2);
-      expect(response.body.data[0].title).toBe('Task 2'); // Most recent first
+      expect(response.body.data[0].title).toBe('Task 2'); 
       expect(response.body.data[1].title).toBe('Task 1');
     });
   });
