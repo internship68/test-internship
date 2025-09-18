@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2020",
-    "lib": ["es2020"],
-    "allowJs": true,
+    "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -11,13 +10,13 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": false,       
-    "noEmit": false,
+    "isolatedModules": false,
     "declaration": true,
     "outDir": "dist",
     "sourceMap": true
   },
   "include": [
+    "app.ts",
     "server.ts",
     "src/**/*.ts"
   ],
